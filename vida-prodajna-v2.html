@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIDA · Una Semana en España</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #FFFFFF; --bg2: #F7F7F5; --border: #EBEBEB;
+  --terra: #C4845A; --bordo: #8B1A2E; --yellow: #E8C88A;
+  --dark: #1A1209; --mid: #6B6560; --light: #9E9890;
+  --terra-light: #FDF5F0; --sand: #F1E5D6;
+}
+body { background: var(--bg); color: var(--dark); font-family: 'Inter', sans-serif; font-weight: 400; font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+.grad { height: 2px; background: linear-gradient(to right, #F1E5D6, #E8C88A, #C4845A, #8B1A2E); }
+
+/* NAV */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+.logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem; color: var(--dark); letter-spacing: 0.08em; }
+.logo-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.65rem; color: var(--terra); display: block; }
+.nav-cta { background: var(--terra); color: white; padding: 9px 18px; border-radius: 6px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background .2s; }
+.nav-cta:hover { background: var(--bordo); }
+
+/* HERO */
+.hero { padding: 52px 20px 44px; text-align: center; border-bottom: 1px solid var(--border); }
+.hero-tag { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
+.hero-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2rem; color: var(--dark); line-height: 1.2; margin-bottom: 10px; }
+.hero-title em { color: var(--terra); font-style: italic; }
+.hero-sub { font-size: 0.9rem; color: var(--mid); margin-bottom: 28px; max-width: 320px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.hero-btns { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.btn-primary { background: var(--terra); color: white; padding: 15px 36px; border-radius: 7px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background .2s; display: inline-block; }
+.btn-primary:hover { background: var(--bordo); }
+.btn-secondary { border: 1.5px solid var(--terra); color: var(--terra); padding: 12px 28px; border-radius: 7px; font-size: 0.8rem; font-weight: 500; text-decoration: none; transition: all .2s; display: inline-block; }
+.btn-secondary:hover { background: var(--terra); color: white; }
+.hero-price { font-size: 0.78rem; color: var(--light); margin-top: 14px; }
+.hero-price strong { color: var(--dark); font-size: 1rem; font-weight: 600; }
+
+/* META STRIP */
+.meta { display: flex; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.meta-item { flex: 1; padding: 14px 6px; text-align: center; border-right: 1px solid var(--border); }
+.meta-item:last-child { border-right: none; }
+.meta-n { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--terra); display: block; }
+.meta-l { font-size: 0.65rem; color: var(--light); }
+
+/* UVOD — tamna pozadina */
+.uvod { background: var(--dark); padding: 44px 20px; }
+.uvod-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; color: #E8D5BC; line-height: 1.7; margin-bottom: 20px; }
+.uvod-quote em { color: var(--yellow); font-style: normal; font-weight: 700; }
+.uvod-body { font-size: 0.88rem; color: #9E9890; line-height: 1.8; }
+
+/* SECTIONS */
+.section { padding: 32px 20px; border-bottom: 1px solid var(--border); }
+.sec-tag { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; }
+.sec-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.15rem; color: var(--dark); margin-bottom: 14px; line-height: 1.3; }
+.sec-body { font-size: 0.88rem; color: var(--mid); line-height: 1.78; }
+
+/* ZA KOGA */
+.arrows { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.arrow-item { display: flex; gap: 12px; align-items: flex-start; font-size: 0.88rem; color: var(--mid); line-height: 1.6; }
+.arrow-icon { color: var(--terra); font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; font-weight: 600; }
+.divider-text { font-size: 0.68rem; color: var(--light); letter-spacing: 0.1em; text-transform: uppercase; margin: 12px 0 10px; }
+
+/* KAKO SLUSAS */
+.kako { background: var(--sand); border-radius: 10px; padding: 18px 16px; margin-top: 14px; }
+.kako-title { font-size: 0.78rem; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+.kako-text { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
+.kako-text em { color: var(--terra); font-style: normal; font-weight: 500; }
+
+/* FILOZOFIJA — yellow */
+.filozofija { background: var(--yellow); padding: 36px 20px; }
+.fil-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem; color: var(--dark); margin-bottom: 14px; line-height: 1.35; }
+.fil-body { font-size: 0.88rem; color: #5a3d20; line-height: 1.8; margin-bottom: 14px; }
+.fil-highlight { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: var(--dark); border-left: 3px solid var(--terra); padding-left: 14px; line-height: 1.6; margin: 16px 0; }
+.fil-closing { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: var(--bordo); font-weight: 700; margin-top: 16px; }
+
+/* LEKCIJE */
+.lekcije { display: flex; flex-direction: column; }
+.lek { display: flex; gap: 14px; padding: 15px 20px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.lek:last-child { border-bottom: none; }
+.lek-n { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--terra); min-width: 20px; flex-shrink: 0; }
+.lek-t { font-size: 0.88rem; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+.lek-s { font-size: 0.76rem; color: var(--light); }
+
+/* BESPLATNO */
+.besplatno { background: var(--terra-light); border: 1px solid #f0ddd0; margin: 0; padding: 28px 20px; }
+.bes-tag { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; }
+.bes-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--dark); margin-bottom: 8px; }
+.bes-body { font-size: 0.85rem; color: var(--mid); line-height: 1.7; margin-bottom: 16px; }
+
+/* CTA */
+.cta { padding: 44px 20px; text-align: center; }
+.cta-tag { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+.cta-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.4rem; color: var(--dark); margin-bottom: 8px; line-height: 1.3; }
+.cta-sub { font-size: 0.85rem; color: var(--mid); margin-bottom: 24px; line-height: 1.7; }
+.price-big { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 700; color: var(--dark); }
+.price-cur { font-size: 1.1rem; color: var(--terra); vertical-align: super; font-weight: 600; }
+.price-note { font-size: 0.72rem; color: var(--light); margin: 6px 0 22px; }
+
+/* UKLJUCENO */
+.ukljuceno { text-align: left; max-width: 320px; margin: 0 auto 24px; }
+.uk-item { display: flex; gap: 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; color: var(--mid); }
+.uk-check { color: var(--terra); font-weight: 600; flex-shrink: 0; }
+
+.btn-big { display: block; background: var(--terra); color: white; padding: 17px; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 7px; text-decoration: none; transition: background .2s; max-width: 320px; margin: 0 auto 10px; }
+.btn-big:hover { background: var(--bordo); }
+.cta-note { font-size: 0.72rem; color: var(--light); }
+
+/* VAMOS */
+.vamos { background: var(--bordo); padding: 28px 20px; text-align: center; }
+.vamos-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: white; letter-spacing: 0.05em; }
+
+/* FOOTER */
+footer { padding: 20px; text-align: center; border-top: 1px solid var(--border); }
+.ft-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.95rem; color: var(--dark); letter-spacing: 0.1em; }
+.ft-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.7rem; color: var(--terra); display: block; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="grad"></div>
+
+<nav>
+  <div class="logo">VIDA <span class="logo-sub">a la española</span></div>
+  <a href="#kupi" class="nav-cta">Upiši me</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-tag">Online audio kurs španskog · Za početnike</p>
+  <h1 class="hero-title">Ti, ja i Španija —<br><em>ovaj put na španskom.</em></h1>
+  <p class="hero-sub">7 lekcija. 7 pravih situacija. Za jednu opuštenu prvu nedelju u Španiji.</p>
+  <div class="hero-btns">
+    <a href="#kupi" class="btn-primary">Upiši me · 57€</a>
+    <a href="#besplatno" class="btn-secondary">Probaj besplatno →</a>
+  </div>
+  <p class="hero-price">ili <strong>Lekcija 1 besplatno</strong> — bez obaveze</p>
+</div>
+
+<!-- META STRIP -->
+<div class="meta">
+  <div class="meta-item"><span class="meta-n">7</span><span class="meta-l">lekcija</span></div>
+  <div class="meta-item"><span class="meta-n">~10'</span><span class="meta-l">po lekciji</span></div>
+  <div class="meta-item"><span class="meta-n">SR</span><span class="meta-l">jezik</span></div>
+  <div class="meta-item"><span class="meta-n">6 mes</span><span class="meta-l">pristup</span></div>
+</div>
+
+<!-- UVOD — tamna -->
+<div class="uvod">
+  <p class="uvod-quote">Put u voljenu Španiju je iza ugla. Stigneš.<br><br>
+  I hoćeš da budeš neko ko se snađe. Ko naruči kafu bez pokazivanja prstom. Ko čuje <em>¿qué tal?</em> i odgovori kao da je to najprirodnija stvar na svetu.</p>
+  <p class="uvod-body">Ne govori onaj ko zna puno — već onaj ko ume da iskoristi i malo.<br><br>Ovaj kurs je to malo. Ali pravo.</p>
+</div>
+
+<!-- ZA KOGA -->
+<div class="section">
+  <p class="sec-tag">Za koga je ovaj kurs</p>
+  <h2 class="sec-title">Ovo si ti</h2>
+  <div class="arrows">
+    <div class="arrow-item"><span class="arrow-icon">→</span>Tek počinješ, nemaš predznanje</div>
+    <div class="arrow-item"><span class="arrow-icon">→</span>Imaš osnove ali pasivno — razumeš nešto, ne progovoriš</div>
+    <p class="divider-text">I jedno od ovoga</p>
+    <div class="arrow-item"><span class="arrow-icon">→</span>Ideš na odmor, u posetu, poslom ili se seliš</div>
+    <div class="arrow-item"><span class="arrow-icon">→</span>Španija ti nije strana — samo jezik jeste</div>
+  </div>
+
+  <div class="kako">
+    <div class="kako-title">Slušaš kad hoćeš i gde hoćeš</div>
+    <div class="kako-text">U jednom mahu za <em>sat i deset minuta</em>. Ili <em>10 minuta, 7 dana</em> — dok voziš, šetaš bebu, vežbaš, kuvaš, imaš svojih 10 minuta.</div>
+  </div>
+</div>
+
+<!-- FILOZOFIJA — yellow -->
+<div class="filozofija">
+  <p class="sec-tag" style="color:#7a5c30;">Zašto ovaj kurs</p>
+  <h2 class="fil-title">Bez pritiska gramatike i pravila.<br>Samo živi jezik. Sa ulica Madrida.</h2>
+  <p class="fil-body">Ovaj vid učenja oslobađa te od težnje za savršenstvom — a to je najveći neprijatelj komunikaciji.</p>
+  <p class="fil-body">Posle ovog kursa možda nećeš znati celu gramatiku ni mnoga pravila. I bićeš ok sa tim — jer ti to za ovo ni ne treba. Imaćeš nešto važnije: <strong>početak</strong>. I to ne bilo kakav — već najšpanskiji mogući.</p>
+  <div class="fil-highlight">Saznaćeš kako Španci žive i pričaju — i zato nećeš učiti jezik iz knjige, već onaj zbog kog ti jedan Marcos ili Tania kažu: <em>„Uvau, kako to znaš?"</em></div>
+  <p class="fil-closing">Jer španski se ne uči napamet. On se živi.</p>
+</div>
+
+<!-- LEKCIJE -->
+<div class="section" style="padding: 28px 0 0;">
+  <p class="sec-tag" style="padding: 0 20px;">7 lekcija · 7 situacija</p>
+  <h2 class="sec-title" style="padding: 0 20px; margin-bottom: 16px;">Za jednu sjajnu prvu nedelju u Španiji</h2>
+  <div class="lekcije">
+    <div class="lek"><div class="lek-n">1</div><div><div class="lek-t">Pre dolaska</div><div class="lek-s">Najbitnije. Predstavi se, pozdravi, osnova svakog upoznavanja.</div></div></div>
+    <div class="lek"><div class="lek-n">2</div><div><div class="lek-t">Hola, recepcija, smeštaj</div><div class="lek-s">Stigla si. Prijava, WiFi, soba — bez stresa.</div></div></div>
+    <div class="lek"><div class="lek-n">3</div><div><div class="lek-t">Naruči u baru kao lokalka</div><div class="lek-s">Kafa, doručak, tapas — onako kako Španci zaista naručuju.</div></div></div>
+    <div class="lek"><div class="lek-n">4</div><div><div class="lek-t">Pričaj i pitaj · Small talk</div><div class="lek-s">¿Qué tal? Odakle si, šta radiš tu — pravi razgovor.</div></div></div>
+    <div class="lek"><div class="lek-n">5</div><div><div class="lek-t">Snalaženje po gradu</div><div class="lek-s">Metro, put, karte, muzej — krećeš se sama.</div></div></div>
+    <div class="lek"><div class="lek-n">6</div><div><div class="lek-t">Večera u restoranu</div><div class="lek-s">Menú del día, vino, plaćanje — i znaš šta jedeš.</div></div></div>
+    <div class="lek"><div class="lek-n">7</div><div><div class="lek-t">Odlazak · Zbogom · Aerodrom</div><div class="lek-s">Oproštaj, check out, taksi — <em>Volveré.</em></div></div></div>
+  </div>
+</div>
+
+<!-- BESPLATNO -->
+<div class="besplatno" id="besplatno">
+  <p class="bes-tag">Probaj pre kupovine</p>
+  <h2 class="bes-title">Lekcija 1 je besplatna</h2>
+  <p class="bes-body">Počni, predstavi se, pozdravi — snadji se kada nešto ne razumeš. Tvoj prvi razgovor na španskom. Bez obaveze.</p>
+  <a href="#" class="btn-secondary">Probaj besplatno →</a>
+</div>
+
+<!-- CTA -->
+<div class="cta" id="kupi">
+  <p class="cta-tag">Kreni danas</p>
+  <h2 class="cta-title">Jedna nedelja.<br>Jedan jezik.<br>Tvoj tempo.</h2>
+  <p class="cta-sub">Koristiš jezik od prvog dana. Pričaš 100% onoga što naučiš.</p>
+  <div class="price-big"><span class="price-cur">€</span>57</div>
+  <p class="price-note">Jednokratno · Pristup 6 meseci · Srpski jezik</p>
+
+  <div class="ukljuceno">
+    <div class="uk-item"><span class="uk-check">✓</span>7 kratkih audio lekcija</div>
+    <div class="uk-item"><span class="uk-check">✓</span>Realan život na španskom</div>
+    <div class="uk-item"><span class="uk-check">✓</span>PDF materijali uz svaku lekciju</div>
+    <div class="uk-item"><span class="uk-check">✓</span>Aplikacija VIDA za vežbu</div>
+  </div>
+
+  <a href="#" class="btn-big">Upiši me</a>
+  <p class="cta-note">Pitanja? Piši na Instagram ili email.</p>
+</div>
+
+<!-- VAMOS -->
+<div class="vamos">
+  <p class="vamos-text">Venga, ¡vamos!</p>
+</div>
+
+<div class="grad"></div>
+
+<footer>
+  <div class="ft-logo">VIDA</div>
+  <span class="ft-sub">a la española</span>
+</footer>
+
+</body>
+</html>

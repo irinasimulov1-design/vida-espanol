@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #FFFFFF;
+  --border: #EBEBEB;
+  --terra: #C4845A;
+  --bordo: #8B1A2E;
+  --yellow: #E8C88A;
+  --dark: #3D2B1F;
+  --mid: #6B6560;
+  --light: #9E9890;
+  --terra-light: #FDF5F0;
+  --sand: #F1E5D6;
+}
+
+body {
+  background: var(--bg);
+  color: var(--dark);
+  font-family: var(--font-outfit), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
