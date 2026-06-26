@@ -184,11 +184,8 @@ export default function LoginPage() {
         {/* Footer */}
         <p style={{ textAlign: 'center', color: c.mid, fontSize: '13px', marginTop: '24px' }}>
           Nemaš nalog?{' '}
-          <Link
-            href="/"
-            style={{ color: c.terra, textDecoration: 'none', fontWeight: '500' }}
-          >
-            Vrati se na početnu
+          <Link href="/signup" style={{ color: c.terra, textDecoration: 'none', fontWeight: '500' }}>
+            Registruj se
           </Link>
         </p>
       </div>
