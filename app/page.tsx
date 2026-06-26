@@ -47,11 +47,16 @@ export default function Home() {
           <div style={{ fontWeight: 700, fontSize: "1.1rem", color: c.dark, letterSpacing: "0.08em" }}>VIDA</div>
           <span style={{ fontStyle: "italic", fontSize: "0.65rem", color: c.terra, display: "block" }}>a la española</span>
         </div>
-        <a href="#kupi" style={{
-          background: c.terra, color: "white", padding: "9px 18px", borderRadius: "6px",
-          fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.06em",
-          textTransform: "uppercase", textDecoration: "none",
-        }}>Upiši me</a>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <a href="/login" style={{
+            color: c.mid, fontSize: "0.78rem", fontWeight: 500, textDecoration: "none",
+          }}>Prijavi se</a>
+          <a href="#kupi" style={{
+            background: c.terra, color: "white", padding: "9px 18px", borderRadius: "6px",
+            fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.06em",
+            textTransform: "uppercase", textDecoration: "none",
+          }}>Upiši me</a>
+        </div>
       </nav>
 
       {/* ── Hero ── */}
@@ -249,6 +254,12 @@ export default function Home() {
       <footer style={{ padding: "20px", textAlign: "center", borderTop: `1px solid ${c.border}` }}>
         <div style={{ fontWeight: 700, fontSize: "0.95rem", color: c.dark, letterSpacing: "0.1em" }}>VIDA</div>
         <span style={{ fontStyle: "italic", fontSize: "0.7rem", color: c.terra, display: "block", marginTop: "2px" }}>a la española</span>
+        <p style={{ fontSize: "0.75rem", color: c.light, marginTop: "12px" }}>
+          Već imaš nalog?{" "}
+          <a href="/login" style={{ color: c.terra, textDecoration: "none", fontWeight: 500 }}>Prijavi se</a>
+          {" · "}
+          <a href="/signup" style={{ color: c.terra, textDecoration: "none", fontWeight: 500 }}>Kreiraj nalog</a>
+        </p>
       </footer>
 
     </main>
