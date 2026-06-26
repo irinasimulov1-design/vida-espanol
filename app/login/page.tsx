@@ -140,6 +140,16 @@ export default function LoginPage() {
               />
             </div>
 
+            {/* Forgot password */}
+            <div style={{ textAlign: 'right', marginTop: '-8px' }}>
+              <Link
+                href="/reset-password"
+                style={{ color: c.light, fontSize: '13px', textDecoration: 'none' }}
+              >
+                Zaboravila si lozinku?
+              </Link>
+            </div>
+
             {/* Error */}
             {state?.error && (
               <div
